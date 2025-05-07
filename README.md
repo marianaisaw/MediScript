@@ -87,7 +87,7 @@ let bp: mmHg = 120/80
 ### Conditional Statements
 ```medscript
 if condition {
-    // statements
+    # statements
 }
 ```
 
