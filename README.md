@@ -51,6 +51,11 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
+4. Upgrade pip if needed:
+```bash
+python3 -m pip install --upgrade pip
+```
+
 ## Usage
 
 Create a `.med` file with your medical logic. Example:
