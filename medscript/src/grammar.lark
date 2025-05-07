@@ -1,0 +1,42 @@
+start: statement+
+
+statement: variable_declaration
+        | if_statement
+        | alert_statement
+        | recommend_statement
+
+variable_declaration: "let" NAME ":" TYPE "=" value
+
+if_statement: "if" condition "{" statement+ "}"
+
+condition: expression ("and" expression)*
+
+expression: comparison
+
+comparison: value COMPARISON value
+
+alert_statement: "alert" STRING
+
+recommend_statement: "recommend" STRING
+
+value: NUMBER
+     | blood_pressure
+     | property_access
+     | NAME
+
+property_access: NAME "." PROPERTY_NAME
+
+blood_pressure: NUMBER "/" NUMBER
+
+COMPARISON: ">" | "<" | ">=" | "<=" | "==" | "!="
+
+TYPE: "Years" | "mmHg" | "String" | "Number"
+
+PROPERTY_NAME: "systolic" | "diastolic"
+
+%import common.CNAME -> NAME
+%import common.NUMBER
+%import common.ESCAPED_STRING -> STRING
+%import common.WS
+
+%ignore WS 

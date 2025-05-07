@@ -1,0 +1,4 @@
+alert "Hello, World!"
+recommend "Welcome to MedScript!"
+alert 2 + 2 
+alert 3 + 3

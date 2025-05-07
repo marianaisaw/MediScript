@@ -1,0 +1,12 @@
+# Simple Hello World in MedScript
+
+# We can use alert to display our message
+alert "Hello, World!"
+
+# We can also use recommend for another message
+recommend "Welcome to MedScript!"
+
+# Declare a variable
+let patient_age: Years = 65
+alert "Patient age is 65"
+recommend "Consider regular check-ups" 
