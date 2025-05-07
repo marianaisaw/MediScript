@@ -32,11 +32,6 @@ This project is just for fun. I am gonna be working on more complex data types s
 
 Run the program: python src/interpreter.py hello.med
 
-
-# MedScript
-
-A simple domain-specific language for medical conditions and alerts.
-
 ## Features
 
 - Type-safe variable declarations with medical units (Years, mmHg)
