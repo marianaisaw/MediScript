@@ -56,6 +56,7 @@ pip install -r requirements.txt
 Create a `.med` file with your medical logic. Example:
 
 ```medscript
+#This is test.med (You should be able to find the test in this repository)
 let patient_age: Years = 65
 let blood_pressure: mmHg = 160/100
 
@@ -67,7 +68,7 @@ if blood_pressure.systolic > 140 and patient_age > 60 {
 
 Run the script:
 ```bash
-python src/interpreter.py
+python3 src/interpreter.py test.med
 ```
 
 ## Language Features
