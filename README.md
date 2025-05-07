@@ -15,7 +15,7 @@ if age > 60 {
     recommend "Annual heart checkup"
 }
 
-Inspired by TypeScript/based on Python, I created MedScript to bring stronger typing and more precise syntax to medical logic, helping avoid variable errors and making clinical rules more coherent and readable.
+Inspired by TypeScript/based on Python, I created MediScript to bring stronger typing and more precise syntax to medical logic, helping avoid variable errors and making clinical rules more coherent and readable.
 
 Clinical Statements
 
