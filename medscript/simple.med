@@ -1,2 +1,2 @@
-alert "Hello, World!"
+alert 2 + 2
 recommend "Welcome to MedScript!"
