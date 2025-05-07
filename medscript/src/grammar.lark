@@ -9,20 +9,23 @@ variable_declaration: "let" NAME ":" TYPE "=" value
 
 if_statement: "if" condition "{" statement+ "}"
 
-condition: expression ("and" expression)*
-
-expression: comparison
+condition: comparison ("and" comparison)*
 
 comparison: value COMPARISON value
-
-alert_statement: "alert" STRING
-
-recommend_statement: "recommend" STRING
 
 value: NUMBER
      | blood_pressure
      | property_access
      | NAME
+     | value "+" value  -> add
+     | value "-" value  -> sub
+     | value "*" value  -> mul
+     | value "/" value  -> div
+     | "(" value ")"
+
+alert_statement: "alert" (STRING | value)
+
+recommend_statement: "recommend" STRING
 
 property_access: NAME "." PROPERTY_NAME
 
@@ -39,4 +42,7 @@ PROPERTY_NAME: "systolic" | "diastolic"
 %import common.ESCAPED_STRING -> STRING
 %import common.WS
 
-%ignore WS 
+// Comments using hashtags
+COMMENT: /#.*/
+%ignore WS
+%ignore COMMENT 
