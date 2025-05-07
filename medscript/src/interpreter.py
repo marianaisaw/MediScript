@@ -24,8 +24,11 @@ class MedScriptTransformer(Transformer):
         self.variables: Dict[str, Any] = {}
         self.current_type: str = None
 
-    def start(self, statements):
-        return statements
+    def start(self, items):
+        return items
+
+    def statement(self, items):
+        return items[0]
 
     def variable_declaration(self, items):
         name, type_, value = items
@@ -47,9 +50,6 @@ class MedScriptTransformer(Transformer):
     def condition(self, items):
         return all(items)
 
-    def expression(self, items):
-        return items[0]
-
     def comparison(self, items):
         left, op, right = items
         if left is None or right is None:
@@ -63,10 +63,12 @@ class MedScriptTransformer(Transformer):
         return f"RECOMMENDATION: {items[0]}"
 
     def value(self, items):
-        value = items[0]
-        if isinstance(value, str) and value in self.variables:
-            return self.variables[value]
-        return value
+        if len(items) == 1:
+            value = items[0]
+            if isinstance(value, str) and value in self.variables:
+                return self.variables[value]
+            return value
+        return items[0]
 
     def property_access(self, items):
         obj_name, prop_name = items
@@ -86,6 +88,24 @@ class MedScriptTransformer(Transformer):
             return BloodPressure(float(items[0]), float(items[1]))
         except ValueError:
             raise MedScriptError("Invalid blood pressure values")
+
+    def add(self, items):
+        left, right = items
+        return float(left) + float(right)
+
+    def sub(self, items):
+        left, right = items
+        return float(left) - float(right)
+
+    def mul(self, items):
+        left, right = items
+        return float(left) * float(right)
+
+    def div(self, items):
+        left, right = items
+        if float(right) == 0:
+            raise MedScriptError("Division by zero")
+        return float(left) / float(right)
 
     def NAME(self, name):
         return str(name)
@@ -115,33 +135,21 @@ def interpret(code: str) -> None:
     try:
         tree = parser.parse(code)
         try:
-            transformer.transform(tree)
+            result = transformer.transform(tree)
+            for item in result:
+                if item is not None:
+                    print(item)
         except Exception as e:
-            if isinstance(e, UnexpectedToken):
-                raise e
-            raise UnexpectedToken(None, str(e))
-    except UnexpectedToken as e:
-        raise e
+            print(f"Error: {str(e)}")
+    except Exception as e:
+        print(f"Parse error: {str(e)}")
 
 if __name__ == "__main__":
     print("Starting interpreter...")
     if len(sys.argv) > 1:
-        # Read from file
         with open(sys.argv[1], 'r') as f:
             code = f.read()
             interpret(code)
-    else:
-        # Example usage
-        code = """
-        let patient_age: Years = 65
-        let blood_pressure: mmHg = 160/100
 
-        if blood_pressure.systolic > 140 and patient_age > 60 {
-            alert "Stage 2 Hypertension"
-            recommend "Start antihypertensive therapy"
-        }
-        """
-        interpret(code)
-
-sys.stdout.write("ALERT: Hello, World!\n")
-sys.stdout.flush() 
+# sys.stdout.write("ALERT: Hello, World!\n")
+# sys.stdout.flush() 
