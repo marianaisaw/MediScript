@@ -1,4 +1,4 @@
-# MedScript
+# MedSicript
 
 A simple domain-specific language for medical conditions and alerts.
 
