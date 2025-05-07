@@ -1,7 +1,16 @@
-let patient_age: Years = 65
+# This is a single-line comment
+let patient_age: Years = 65  # Age of the patient
 let blood_pressure: mmHg = 160/100
 
 if blood_pressure.systolic > 140 and patient_age > 60 {
     alert "Stage 2 Hypertension"
     recommend "Start antihypertensive therapy"
-} 
+}
+
+alert 2 + 2 
+
+let foo: Years  = 4
+alert foo
+
+let number: Number = 2 + 3
+alert number
