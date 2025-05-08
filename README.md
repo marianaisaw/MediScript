@@ -93,6 +93,9 @@ Supported types:
 Blood pressure values are specified as systolic/diastolic:
 ```medscript
 let bp: mmHg = 120//80
+
+or alert 7//8
+output = BloodPressure(systolic=7.0, diastolic=8.0)
 ```
 
 ### Division
