@@ -12,12 +12,13 @@ General approach:
 -> Target user: Clinicians, medical developers (software and hardware)
 
 Code example:
+```bash
 let age: Years = 65
 if age > 60 {
     alert "Senior patient"
     recommend "Annual heart checkup"
 }
-
+```
 I created MediScript to bring stronger typing and more precise syntax to medical logic, helping avoid variable errors and making clinical rules more coherent and readable.
 
 Clinical Statements
