@@ -29,7 +29,7 @@ recommend_statement: "recommend" STRING
 
 property_access: NAME "." PROPERTY_NAME
 
-blood_pressure: NUMBER "/" NUMBER
+blood_pressure: NUMBER "//" NUMBER
 
 COMPARISON: ">" | "<" | ">=" | "<=" | "==" | "!="
 
@@ -46,3 +46,4 @@ PROPERTY_NAME: "systolic" | "diastolic"
 COMMENT: /#.*/
 %ignore WS
 %ignore COMMENT 
+
