@@ -82,4 +82,34 @@ def test_multiple_conditions():
     """
     output = capture_output(code)
     assert "ALERT: Severe hypertension in elderly" in output
-    assert "RECOMMENDATION: Immediate medical attention" in output 
+    assert "RECOMMENDATION: Immediate medical attention" in output
+
+def test_glucose_declaration():
+    code = """
+    let glucose: mg/dL = 110
+    """
+    output = capture_output(code)
+    assert output == ""
+
+def test_glucose_alert():
+    code = """
+    let glucose: mg/dL = 180
+    if glucose > 140 {
+        alert "High glucose level"
+        recommend "Check for diabetes"
+    }
+    """
+    output = capture_output(code)
+    assert "ALERT: High glucose level" in output
+    assert "RECOMMENDATION: Check for diabetes" in output
+
+def test_normal_glucose():
+    code = """
+    let glucose: mg/dL = 110
+    if glucose > 140 {
+        alert "High glucose level"
+        recommend "Check for diabetes"
+    }
+    """
+    output = capture_output(code)
+    assert output == ""  # No alerts for normal glucose level 
