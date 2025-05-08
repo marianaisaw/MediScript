@@ -92,7 +92,13 @@ Supported types:
 ### Blood Pressure
 Blood pressure values are specified as systolic/diastolic:
 ```medscript
-let bp: mmHg = 120/80
+let bp: mmHg = 120//80
+```
+
+### Division
+Divide intergers
+```medscript
+alert 10 / 2
 ```
 
 ### Conditional Statements
