@@ -1,7 +1,10 @@
 # MediScript
-MediScript is a domain-specific programming language designed to simplify the expression of medical logic and clinical decision rules.
+MediScript is a domain-specific programming language (Inspired by TypeScript/based on Python) designed to simplify the expression of medical logic and clinical decision rules.
 
-Features
+Clinicians and healthcare developers often work with complex, error-prone logic embedded in EMRs or custom Python code. MediScript abstracts that into a more readable, type-safe format.
+
+General approach:
+
 -> Purpose: Clinical logic
 -> Syntax: Minimal and natural
 -> Execution: Interpreter (Lark)
@@ -15,7 +18,7 @@ if age > 60 {
     recommend "Annual heart checkup"
 }
 
-Inspired by TypeScript/based on Python, I created MediScript to bring stronger typing and more precise syntax to medical logic, helping avoid variable errors and making clinical rules more coherent and readable.
+I created MediScript to bring stronger typing and more precise syntax to medical logic, helping avoid variable errors and making clinical rules more coherent and readable.
 
 Clinical Statements
 
@@ -23,8 +26,6 @@ alert - warnings.
 recommend - for treatment guidance.
 
 This project is just for fun. I am gonna be working on more complex data types soon.
-
-Run the program: python src/interpreter.py hello.med
 
 ## Features
 
