@@ -1,10 +1,16 @@
 # This is a single-line comment
 let patient_age: Years = 65  # Age of the patient
 let blood_pressure: mmHg = 160//100
+let glucose: mg/dL = 110
 
 if blood_pressure.systolic > 140 and patient_age > 60 {
     alert "Stage 2 Hypertension"
     recommend "Start antihypertensive therapy"
+}
+
+if glucose > 140 {
+    alert "High glucose level"
+    recommend "Check for diabetes"
 }
 
 alert 2 + 2 
