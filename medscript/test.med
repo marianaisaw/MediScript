@@ -1,6 +1,6 @@
 # This is a single-line comment
 let patient_age: Years = 65  # Age of the patient
-let blood_pressure: mmHg = 160/100
+let blood_pressure: mmHg = 160//100
 
 if blood_pressure.systolic > 140 and patient_age > 60 {
     alert "Stage 2 Hypertension"
@@ -14,3 +14,9 @@ alert foo
 
 let number: Number = 2 + 3
 alert number
+
+#divide numbers
+alert 7/8
+
+#get BloodPressure(systolic=7.0, diastolic=8.0)
+alert 7//8
