@@ -16,6 +16,59 @@ class BloodPressure:
         except ValueError:
             raise MedScriptError("Blood pressure must be in format 'systolic//diastolic'")
 
+@dataclass
+class Glucose:
+    value: float
+
+    @classmethod
+    def from_string(cls, value: str) -> 'Glucose':
+        try:
+            return cls(float(value))
+        except ValueError:
+            raise MedScriptError("Glucose value must be a number")
+    
+    def __gt__(self, other):
+        if isinstance(other, (int, float)):
+            return self.value > other
+        if isinstance(other, Glucose):
+            return self.value > other.value
+        return NotImplemented
+    
+    def __lt__(self, other):
+        if isinstance(other, (int, float)):
+            return self.value < other
+        if isinstance(other, Glucose):
+            return self.value < other.value
+        return NotImplemented
+    
+    def __ge__(self, other):
+        if isinstance(other, (int, float)):
+            return self.value >= other
+        if isinstance(other, Glucose):
+            return self.value >= other.value
+        return NotImplemented
+    
+    def __le__(self, other):
+        if isinstance(other, (int, float)):
+            return self.value <= other
+        if isinstance(other, Glucose):
+            return self.value <= other.value
+        return NotImplemented
+    
+    def __eq__(self, other):
+        if isinstance(other, (int, float)):
+            return self.value == other
+        if isinstance(other, Glucose):
+            return self.value == other.value
+        return NotImplemented
+    
+    def __ne__(self, other):
+        if isinstance(other, (int, float)):
+            return self.value != other
+        if isinstance(other, Glucose):
+            return self.value != other.value
+        return NotImplemented
+
 class MedScriptError(Exception):
     pass
 
@@ -36,6 +89,11 @@ class MedScriptTransformer(Transformer):
         if type_ == "mmHg":
             if not isinstance(value, BloodPressure):
                 raise MedScriptError("Blood pressure values must be in format 'systolic//diastolic'")
+        elif type_ == "mg/dL":
+            if not isinstance(value, (float, int, Glucose)):
+                raise MedScriptError("Glucose values must be numbers")
+            if isinstance(value, (float, int)):
+                value = Glucose(value)
         self.variables[name] = value
         return None
 
@@ -153,3 +211,4 @@ if __name__ == "__main__":
 
 # sys.stdout.write("ALERT: Hello, World!\n")
 # sys.stdout.flush() 
+
