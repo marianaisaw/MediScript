@@ -11,10 +11,10 @@ class BloodPressure:
     @classmethod
     def from_string(cls, value: str) -> 'BloodPressure':
         try:
-            systolic, diastolic = map(float, value.split('/'))
+            systolic, diastolic = map(float, value.split('//'))
             return cls(systolic, diastolic)
         except ValueError:
-            raise MedScriptError("Blood pressure must be in format 'systolic/diastolic'")
+            raise MedScriptError("Blood pressure must be in format 'systolic//diastolic'")
 
 class MedScriptError(Exception):
     pass
@@ -35,7 +35,7 @@ class MedScriptTransformer(Transformer):
         self.current_type = type_
         if type_ == "mmHg":
             if not isinstance(value, BloodPressure):
-                raise MedScriptError("Blood pressure values must be in format 'systolic/diastolic'")
+                raise MedScriptError("Blood pressure values must be in format 'systolic//diastolic'")
         self.variables[name] = value
         return None
 
