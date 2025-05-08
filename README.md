@@ -4,7 +4,7 @@ MediScript is a domain-specific programming language designed to simplify the ex
 Features
 -> Purpose: Clinical logic
 -> Syntax: Minimal and natural
--> Execution: Interpreter (Lark, LLVM)
+-> Execution: Interpreter (Lark)
 -> Domain fit: Medical alerts & recs
 -> Target user: Clinicians, medical developers (software and hardware)
 
@@ -28,7 +28,7 @@ Run the program: python src/interpreter.py hello.med
 
 ## Features
 
-- Type-safe variable declarations with medical units (Years, mmHg)
+- Type-safe variable declarations with medical units (Years, mmHg, mg/dL)
 - Blood pressure handling with systolic/diastolic values
 - Conditional statements for medical decision making
 - Alert and recommendation system
