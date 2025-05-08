@@ -88,6 +88,7 @@ Supported types:
 - mmHg
 - String
 - Number
+- mg/dL
 
 ### Blood Pressure
 Blood pressure values are specified as systolic/diastolic:
