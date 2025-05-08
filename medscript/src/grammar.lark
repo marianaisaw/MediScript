@@ -33,7 +33,7 @@ blood_pressure: NUMBER "//" NUMBER
 
 COMPARISON: ">" | "<" | ">=" | "<=" | "==" | "!="
 
-TYPE: "Years" | "mmHg" | "String" | "Number"
+TYPE: "Years" | "mmHg" | "String" | "Number" | "mg/dL"
 
 PROPERTY_NAME: "systolic" | "diastolic"
 
@@ -46,5 +46,6 @@ PROPERTY_NAME: "systolic" | "diastolic"
 COMMENT: /#.*/
 %ignore WS
 %ignore COMMENT 
+ 
 
 
