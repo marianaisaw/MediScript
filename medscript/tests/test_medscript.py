@@ -24,7 +24,7 @@ def test_basic_variable_declaration():
 
 def test_blood_pressure_declaration():
     code = """
-    let bp: mmHg = 120/80
+    let bp: mmHg = 120//80
     """
     output = capture_output(code)
     assert output == ""
@@ -32,7 +32,7 @@ def test_blood_pressure_declaration():
 def test_hypertension_stage2():
     code = """
     let patient_age: Years = 65
-    let blood_pressure: mmHg = 160/100
+    let blood_pressure: mmHg = 160//100
 
     if blood_pressure.systolic > 140 and patient_age > 60 {
         alert "Stage 2 Hypertension"
@@ -46,7 +46,7 @@ def test_hypertension_stage2():
 def test_normal_blood_pressure():
     code = """
     let patient_age: Years = 45
-    let blood_pressure: mmHg = 120/80
+    let blood_pressure: mmHg = 120//80
 
     if blood_pressure.systolic > 140 and patient_age > 60 {
         alert "Stage 2 Hypertension"
@@ -58,7 +58,7 @@ def test_normal_blood_pressure():
 
 def test_blood_pressure_properties():
     code = """
-    let bp: mmHg = 150/95
+    let bp: mmHg = 150//95
     if bp.systolic > 140 {
         alert "High systolic pressure"
     }
@@ -73,7 +73,7 @@ def test_blood_pressure_properties():
 def test_multiple_conditions():
     code = """
     let age: Years = 70
-    let bp: mmHg = 170/100
+    let bp: mmHg = 170//100
     
     if bp.systolic > 160 and age > 65 {
         alert "Severe hypertension in elderly"
