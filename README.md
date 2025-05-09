@@ -19,6 +19,16 @@ if age > 60 {
     recommend "Annual heart checkup"
 }
 ```
+```bash
+let patient_age: Years = 65
+let blood_pressure: mmHg = 160//100
+
+if blood_pressure.systolic > 140 and patient_age > 60 {
+    alert "Stage 2 Hypertension"
+    recommend "Start antihypertensive therapy"
+}
+```
+
 I created MediScript to bring stronger typing and more precise syntax to medical logic, helping avoid variable errors and making clinical rules more coherent and readable.
 
 Clinical Statements
