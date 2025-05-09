@@ -11,8 +11,9 @@ General approach:
 -> Domain fit: Medical alerts & recs
 -> Target user: Clinicians, medical developers (software and hardware)
 
-Code example:
+Code examples:
 ```bash
+#EXAMPLE 1
 let age: Years = 65
 if age > 60 {
     alert "Senior patient"
@@ -20,6 +21,7 @@ if age > 60 {
 }
 ```
 ```bash
+#EXAMPLE 2
 let patient_age: Years = 65
 let blood_pressure: mmHg = 160//100
 
