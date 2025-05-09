@@ -24,6 +24,7 @@ I created MediScript to bring stronger typing and more precise syntax to medical
 Clinical Statements
 
 alert - warnings.
+
 recommend - for treatment guidance.
 
 This project is just for fun. I am gonna be working on more complex data types soon.
