@@ -22,10 +22,10 @@ if age > 60 {
 ```
 ```bash
 #EXAMPLE 2
-let patient_age: Years = 65
-let blood_pressure: mmHg = 160//100
+let patientAge: Years = 65
+let bloodPressure: mmHg = 160//100
 
-if blood_pressure.systolic > 140 and patient_age > 60 {
+if bloodPressure.systolic > 140 and patientAge > 60 {
     alert "Stage 2 Hypertension"
     recommend "Start antihypertensive therapy"
 }
