@@ -1,5 +1,5 @@
 # MediScript
-MediScript is a domain-specific programming language (Inspired by TypeScript/based on Python) designed to simplify the expression of medical logic and clinical decision rules.
+MediScript is a domain-specific interpreted programming language (Inspired by TypeScript/based on Python) designed to simplify the expression of medical logic and clinical decision rules.
 
 Clinicians and healthcare developers often work with complex, error-prone logic embedded in EMRs or custom Python code. MediScript abstracts that into a more readable, type-safe format.
 
