@@ -42,7 +42,6 @@ PROPERTY_NAME: "systolic" | "diastolic"
 %import common.ESCAPED_STRING -> STRING
 %import common.WS
 
-// Comments using hashtags
 COMMENT: /#.*/
 %ignore WS
 %ignore COMMENT 
